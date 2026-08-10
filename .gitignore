@@ -1,0 +1,17 @@
+# ufbt / build artifacts
+.ufbt/
+dist/
+build/
+*.elf
+*.fap
+
+# editor
+.vscode/
+.idea/
+
+# python
+__pycache__/
+*.pyc
+
+# os
+.DS_Store

@@ -1,0 +1,12 @@
+App(
+    appid="ir_trainer",
+    name="IR Remote Trainer",
+    apptype=FlipperAppType.EXTERNAL,
+    entry_point="ir_trainer_app",
+    stack_size=8 * 1024,
+    fap_category="Infrared",
+    fap_version="1.0",
+    fap_author="Rob Kaltenbach",
+    fap_weburl="https://github.com/robkaltenbach/flipper-ir-remote-trainer",
+    fap_description="Brute-force an IR database one code at a time, test each, and save the ones that work into a new named remote with your own button names.",
+)
