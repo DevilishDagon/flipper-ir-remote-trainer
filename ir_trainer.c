@@ -125,7 +125,7 @@ typedef struct {
 } App;
 
 /* Forward declarations */
-static void text_input_done(void* context);
+static void __attribute__((unused)) text_input_done(void* context);
 static void popup_timeout_cb(void* context);
 
 /* ------------------------------------------------------------------ */
@@ -397,7 +397,7 @@ static void timer_callback(void* context) {
     App* app=context;
     view_dispatcher_send_custom_event(app->view_dispatcher,1);
 }
-static bool custom_event(uint32_t event,void* context) {
+static bool custom_event(void* context,uint32_t event) {
     App* app=context;
     if(event!=1 || app->stage!=StageScan || app->paused) return true;
     if(app->scan_index>=app->count) {
@@ -491,7 +491,7 @@ static void popup_timeout_cb(void* context) {
     go_view(app, ViewIdTrial);
 }
 
-static void text_input_done(void* context) {
+static void __attribute__((unused)) text_input_done(void* context) {
     App* app = context;
 
     if(app->text_mode == TextModeRemoteName) {
