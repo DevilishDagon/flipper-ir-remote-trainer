@@ -530,12 +530,8 @@ static void __attribute__((unused)) text_input_done(void* context) {
 
 static bool app_navigation(void* context) {
     App* app=context;
-    if(app->stage==StageReview) {
-        app->stage=StageScan;app->paused=true;app->have_sent=false;
-        refresh_trial(app);return true;
-    }
-    if(app->stage==StageScan && app->saved) {review(app);return true;}
-    return false;
+    persist(app);
+    return false; /* Back exits safely; reopening resumes scan progress. */
 }
 
 /* ------------------------------------------------------------------ */
